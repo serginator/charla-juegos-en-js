@@ -1,0 +1,560 @@
+<!doctype html>
+<!--[if lt IE 7]>	<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="es"> <![endif]-->
+<!--[if IE 7]>		<html class="no-js lt-ie9 lt-ie8" lang="es"> <![endif]-->
+<!--[if IE 8]>		<html class="no-js lt-ie9" lang="es"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Creación de juegos en JavaScript</title>
+	<meta name="description" content="Presentación para la charla en TUCAMON sobre
+		  desarrollo de videojuegos en JavaScript">
+	<meta name="author" content="Sergio Ruiz (@serginator) y Carlos Benitez (@etnassoft)">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+	<article id="impress" class="impress-not-supported">
+		<div class="fallback-message">
+	        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a
+                simplified version of this presentation.</p>
+	        <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.
+                Upcoming version 10 of Internet Explorer <i>should</i> also handle it.</p>
+	    </div>
+	    <!-- HOME -->
+	    <section id="home" class="step slide" data-x="0" data-y="0">
+			<figure>
+				<q>Creación de juegos en JavaScript</q>
+			</figure>
+			<section class="right">
+				<a href="http://www.serginator.com/juegos-en-js" title="Link a juegos-en-js">www.serginator.com/juegos-en-js</a>
+			</section>
+            <img src="img/mario.png" alt="mario" style="position:absolute;left:100px;top:300px">
+            <img src="img/invader2.png" alt="invader 2" style="position:absolute;left:100px;top:300px">
+            <img src="img/tucamon.jpg" alt="tucamon" style="position:absolute;right:100px;bottom:100px">
+		</section>
+
+		<!-- Quienes somos -->
+		<section id="whoareus" class="step slide" data-x="-1000" data-y="0" data-rotate="90">
+            <section class="left">
+                <img class="foto" src="img/sergio.jpg" title="Foto de Sergio" width="200"/>
+                <ul>
+                    <li>Sergio Ruiz</li>
+                    <li><a href="http://www.twitter.com/serginator"
+                           target="_blank" title="@serginator">@serginator</a></li>
+                    <li><a href="http://www.serginator.com"
+                           target="_blank" title="serginator.com">www.serginator.com</a></li>
+                </ul>
+            </section>
+            <section class="right">
+                <img class="foto" src="img/carlos.jpg" title="Foto de Carlos" width="200"/>
+                <ul>
+                    <li>Carlos Benitez</li>
+                    <li><a href="http://www.twitter.com/etnassoft"
+                           target="_blank" title="@etnassoft">@etnassoft</a></li>
+                    <li><a href="http://www.etnassoft.com"
+                           target="_blank" title="etnassoft.com">www.etnassoft.com</a></li>
+                    <li><a href="http://www.openlibra.com"
+                           target="_blank" title="OpenLibra">www.openlibra.com</a></li>
+                </ul>
+            </section>
+		</section>
+
+		<!-- Antes y ahora -->
+        <section class="step slide" data-x="1000" data-y="0">
+            <h1>Antes y ahora</h1>
+            <section class="left" style="width:45%">
+							<ul>
+								<li>Hardware</li>
+								<ul><li>8/16 bits</li></ul>
+								<li>2D</li>
+								<li>Optimización</li>
+							</ul>
+						</section>
+						<section class="right" style="width:45%">
+							<ul>
+								<li>Navegador</li>
+								<ul><li>Memoria</li></ul>
+								<li>2D y 3D (WebGL)</li>
+								<li>Optimización</li>
+							</ul>
+						</section>
+        </section>
+
+		<!-- HTML5 -->
+        <section class="step slide" data-x="2000" data-y="0">
+            <h1>HTML5</h1>
+            <img src="img/html5.png" alt="HTML5"
+                 style="position:absolute;top:175px;right:100px" >
+            <ul>
+                <li>Introduce el elemento canvas</li>
+                <li>Audio</li>
+                <li>Vídeo</li>
+                <li>Transformaciones CSS</li>
+                <li>LocalStorage (OFFLINE)</li>
+								<li>WebSockets</li>
+								<li>NodeJS</li>
+            </ul>
+        </section>
+
+		<!-- Frameworks -->
+        <section class="step slide" data-x="3000" data-y="0">
+            <h1>Frameworks</h1>
+            <figure>Listado de frameworks completísimo:
+                <a href="http://gist.github.com/768272" target="_blank" title="lista de frameworks">aquí</a>
+            </figure>
+            <section class="left" style="margin-left:30px;width:45%;">
+                <h2>DE PAGO</h2>
+                - <a href="http://www.impactjs.com"
+                     target="_blank" title="impactjs" style="line-height:50px">impactJS</a> ($99)
+                <img src="img/impactjs.png" alt="impact.js icon" />
+                <br />
+            </section>
+            <section class="right" style="width:45%;margin-left:30px">
+                <h2>GRATUITOS</h2>
+                - <a href="http://www.kesiev.com/akihabara/" target="_blank" title="Akihabara">Akihabara</a><br/>
+                - <a href="http://www.craftyjs.com" target="_blank" title="craftyjs">Crafty</a>
+                    <img src="img/craftyjs.png" alt="craftyjs icon"> <br/>
+                - <a href="http://www.limejs.com" target="_blank" title="limejs">LimeJS</a><br/>
+                - <a href="http://www.melonjs.org" target="_blank" title="melonjs">MelonJS</a><br/>
+                - <a href="http://www.mibbu.eu" target="_blank" title="mibbu">Mibbu</a>
+            </section>
+        </section>
+
+		<!-- Herramientas -->
+        <section id="tools" class="step slide" data-x="4000" data-y="0">
+            <h1>Herramientas</h1>
+            <img style="position:absolute;top:100px;right:100px;
+            -webkit-transform:rotate(10deg);-moz-transform:rotate(10deg);
+            -o-transform:rotate(10deg);-ms-transform:rotate(10deg);" src="img/tools.png" alt="Herramientas" />
+            <ul>
+                <li><a href="#levelEditor">Editor de niveles</a></li>
+                <li><a href="#codeValidation">Validar código</a></li>
+                <li><a href="#debug">Depurar</a></li>
+                <li><a href="#browser">Navegadores</a></li>
+                <li><a href="#webgl">3D</a></li>
+            </ul>
+        </section>
+
+        <section id="levelEditor" class="step slide" data-x="4000" data-y="800">
+            <h1>Editor de niveles</h1>
+            <ul>
+                <li><a href="http://www.jazz2online.com/downloads/6796/webjcs/">WebJCS</a></li>
+                <ul>
+                    <li><a href="http://djazz.mine.nu:8010/"
+                           target="_blank" title="WebJCS colaborativo">Versión colaborativa online</a></li>
+                    <li><a href="http://www.youtube.com/watch?v=ksVPCN9XxAc"
+                           target="_blank" title="video webjcs">Vídeo (merece la pena verlo)</a></li>
+                    <iframe width="300" height="182" src="http://www.youtube.com/embed/ksVPCN9XxAc?rel=0"
+                            frameborder="0" allowfullscreen></iframe>
+                </ul>
+                <li>
+                    <a href="">Tiled Map Editor</a>
+                    <img src="img/tiledmapeditor.png" alt="tiled map editor icon">
+                </li>
+            </ul>
+        </section>
+
+        <section id="codeValidation" class="step slide" data-x="4000" data-y="1600">
+            <h1>Validar código</h1>
+            <img src="img/linthint.png" alt="Lint vs Hint"
+                 style="position:absolute;top:400px;right:50px;-webkit-transform:rotate(-20deg);-moz-transform:rotate(-20deg);
+            -o-transform:rotate(-20deg);-ms-transform:rotate(-20deg);">
+            <ul>
+                <li><a href="http://www.jslint.com" target="_blank" title="JSLink">JSLint (más estricto)</a></li>
+                <li><a href="http://www.jshint.com" target="_blank" title="JSHint">JSHint (más real)</a></li>
+                <li><a href="http://jsonformatter.curiousconcept.com" target="_blank" title="JSON Formatter">JSON Formatter & Validator</a></li>
+								<li><a href="http://jsmeter.info" target="_blank" title="jsmeter.info">jsmeter (para medir complejidad)</a></li>
+            </ul>
+        </section>
+
+        <section id="debug" class="step slide" data-x="4000" data-y="2400">
+            <h1>Depurar código</h1>
+            <ul>
+                <li><a href="https://addons.mozilla.org/es-es/firefox/addon/firebug/"
+                       target="_blank" title="Firebug"><b>Firebug</b></a></li>
+                <li><a href="http://code.google.com/intl/es-ES/chrome/devtools/docs/overview.html"
+                       target="_blank" title="Chrome DevTools">Chrome Developer Tools</a></li>
+            </ul>
+            <img src="img/firebug.png" alt="Firebug icon">
+        </section>
+
+        <section id="browser" class="step slide" data-x="4000" data-y="3200">
+            <h1>Navegador</h1>
+            <img src="img/firefoxVSchrome.png" alt="Firefox vs Chrome" style="position:absolute;top:50px;right:400px;
+            -webkit-transform:rotate(-20deg);-moz-transform:rotate(-20deg);
+            -o-transform:rotate(-20deg);-ms-transform:rotate(-20deg);">
+            <section class="left" style="width:45%;margin-left:30px">
+                <h2>Firefox</h2>
+                <ul style="font-size: 25px">
+                    <li>ENGINE: SpiderMonkey</li>
+                    <li>Mejor para desarrollar</li>
+                </ul>
+            </section>
+            <section class="right" style="width: 45%">
+                <h2>Chrome</h2>
+                <ul style="font-size: 25px">
+                    <li>ENGINE: V8</li>
+                    <li>Mejor para ejecutar</li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="webgl" class="step slide" data-x="4000" data-y="4000">
+            <h1>3D</h1>
+            <ul>
+                <li><a href="http://mrdoob.github.com/three.js/" target="_blank" title="three.js">three.js</a></li>
+                <li><a href="http://www.etnassoft.com/biblioteca/webgl-biblioteca-grafica-basada-en-web/"
+                        target="_blank"
+                        title="webgl biblioteca grafica basada en web">Libro sobre WebGL en OpenLibra</a></li>
+            </ul>
+            <!-- <img src="img/webgl.png" alt="WebGL" style="
+            -webkit-transform:rotate(-20deg);-moz-transform:rotate(-20deg);
+            -o-transform:rotate(-20deg);-ms-transform:rotate(-20deg);"> -->
+            <h1>WebGL</h1>
+            <ul>
+                <li>OpenGL 2.0</li>
+                <li>Aceleración por hardware</li>
+                <li>Juegos y aplicaciones gráficas</li>
+                <li><a href="http://www.chromeexperiments.com/webgl" title="Chrome WebGL Experiments" target="_blank">Chrome WebGL Experiments</a></li>
+            </ul>
+            <!-- <img src="img/WebGL_libro.gif" alt="WebGL libro openlibra" style="margin-left:150px"> -->
+        </section>
+        
+		<!-- LA CHICHA -->
+        <section class="step slide" data-x="5000" data-y="0">
+            <h1 style="text-align:center;line-height:400px;">Y ahora la chicha</h1>
+        </section>
+        
+        <!-- Preparación de la web -->
+        <section id="settingTheWeb1" class="step slide" data-x="6000" data-y="0">
+            <h1>Preparación de la web</h1>
+            <ul>
+                <li>Hoja de estilos</li>
+                <ul>
+                    <li>Necesaria como mínimo para el canvas</li>
+                </ul>
+                <li>Canvas</li>
+                <ul>
+                    <li>Es el elemento que nos servirá de "lienzo"</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section id="settingTheWeb2" class="step slide" data-x="6000" data-y="800">
+            <h1>Página desde la que empezamos</h1>
+            <iframe src="http://pastebin.com/embed_iframe.php?i=RMtAFRWi" style="border:none;width:100%;height:308px"></iframe>
+        </section>
+
+        <section id="settingTheWeb3" class="step slide" data-x="6000" data-y="1600">
+            <h1>El CSS</h1>
+            <iframe src="http://pastebin.com/embed_iframe.php?i=8dV2W8m7" style="border:none;width:100%;height:110px;"></iframe>
+        </section>
+        <section id="settingTheWeb4" class="step slide" data-x="6000" data-y="2400">
+            <h1>Y el JS</h1>
+            <iframe src="http://pastebin.com/embed_iframe.php?i=UF4vWmQx" style="border:none;width:100%;height:425px"></iframe>
+        </section>
+
+        <!-- Componentes de un juego -->
+        <section id="gameComponents" class="step slide" data-x="7000" data-y="0">
+            <h1>Componentes de un juego</h1>
+            <ul>
+                <li><a href="#gameloop1">Gameloop</a></li>
+                <li><a href="#keyHandler">Keyhandler</a></li>
+                <li><a href="#objects">Objetos</a> (personajes, balas, etc)</li>
+                <li><a href="#collisions">Colisiones</a></li>
+                <li><a href="#IA">IA</a></li>
+            </ul>
+        </section>
+
+        <!-- Gameloop -->
+        <section id="gameloop1" class="step slide" data-x="8000" data-y="0">
+            <h1>Gameloop</h1>
+            <ul>
+                <li><a href="#gameloop2">setTimeout()</a></li>
+                <li><a href="#gameloop3">requestAnimationFrame</a></li>
+                <li><a href="#gameloop4">update()</a></li>
+                <li><a href="#gameloop5">draw()</a></li>
+                <li><a href="#gameloop6">buffer y bufferctx</a></li>
+            </ul>
+            <img src="img/gameloop.png" alt="Gameloop" style="position:absolute;right:100px;top:150px">
+        </section>
+
+        <!-- setTimeout() -->
+        <section id="gameloop2" class="step slide" data-x="8000" data-y="800">
+            <h1>setTimeout</h1>
+            <ul>
+                <li>Antes lo hacíamos de esta forma:</li>
+            </ul>
+            <iframe src="http://pastebin.com/embed_iframe.php?i=eQayaqcC" style="border:none;width:100%;height:88px"></iframe>
+            <ul>
+                <li>Ahora se hace con <a href="">requestAnimationFrame</a></li>
+            </ul>
+        </section>
+
+        <!-- requestAnimationFrame -->
+        <section id="gameloop3" class="step slide" data-x="8000" data-y="1600">
+            <h1>requestAnimationFrame</h1>
+            <ul>
+                <li>60 FPS</li>
+                <li>Ahorro en CPU, GPU, memoria y batería</li>
+            </ul>
+            <iframe src="http://pastebin.com/embed_iframe.php?i=mdJ6rQna" style="border:none;width:100%;height:260px"></iframe>
+        </section>
+
+        <!-- update() -->
+        <section id="gameloop4" class="step slide" data-x="8000" data-y="2400">
+            <h1>update()</h1>
+            <p>Se encarga de actualizar el estado del juego</p>
+            <iframe src="http://pastebin.com/embed_iframe.php?i=Ww5za2Qm" style="border:none;width:100%;height:333px"></iframe>
+        </section>
+
+        <!-- draw() -->
+        <section id="gameloop5" class="step slide" data-x="8000" data-y="3200">
+            <h1>draw()</h1>
+            <p>Se encarga de dibujar el buffer en el contexto</p>
+            <iframe src="http://pastebin.com/embed_iframe.php?i=FMZTSLm9" style="border:none;width:100%;height:88px"></iframe>
+        </section>
+
+        <!-- buffer y bufferctx -->
+        <section id="gameloop6" class="step slide" data-x="8000" data-y="4000">
+            <h1>buffer y bufferctx</h1>
+            Dibujamos en éstos porque al renderizar las imágenes sin mostrarlas ganamos mucho en rendimiento. Luego
+            la copia del buffer al canvas actual es súper rápido.
+        </section>
+
+        <!-- KeyHandler -->
+        <section id="keyHandler" class="step slide" data-x="9000" data-y="0">
+            <h1>KeyHandler</h1>
+            <iframe src="http://pastebin.com/embed_iframe.php?i=hVn135KB" style="border:none;width:100%;height:400px"></iframe>
+        </section>
+        
+        <!-- Objetos -->
+        <section id="objects" class="step slide" data-x="10000" data-y="0">
+            <h1>Objetos</h1>
+            <img src="img/invader.png" alt="invader icon" style="position:absolute;right:100px;top:150px">
+            <img src="img/spaceship.png" alt="spaceship icon" style="position:absolute;right:300px;top:175px">
+            <img src="img/yellowBird.png" alt="yellow bird icon" style="position:absolute;right:200px;top:300px">
+            <ul>
+                <li><a href="#player">Player</a></li>
+                <li><a href="#shoots">Disparos</a></li>
+                <li><a href="#enemies">Enemigos</a></li>
+            </ul>
+        </section>
+
+        <section id="player" class="step slide" data-x="10000" data-y="800">
+            <h1>Player</h1>
+            <img src="img/ship.png" alt="ship icon" style="position:absolute;left:250px;top:75px">
+            <p style="margin-bottom:10px">Tenemos dos formas de crear objetos en JavaScript. Una sería prototipando, y la otra sería
+            en el propio objeto. Por claridad nos vamos a decantar por hacerlo dentro de la misma función.</p>
+            <section class="left" style="width:35%;margin-left:30px;font-size:20px;line-height:20px;
+            							 background-color:lightgrey;padding:5px;margin-right:5px">
+                <h2 style="margin:10px 0">Normal</h2>
+                <span>var Ship = function(){</span>{<br>
+				<span style="margin-left:20px">this.speed = 10;</span><br>
+				<span style="margin-left:20px">this.posX = 0;</span><br>
+				<span style="margin-left:20px">this.posY = 0;</span><br>
+				<span style="margin-left:20px">this.moreSpeed = function(newSpeed){</span><br>
+				<span style="margin-left:40px">this.speed += newSpeed;</span><br>
+				<span style="margin-left:20px">}</span><br>
+                <span>}</span><br>
+            </section>
+            <section class="right" style="width:55%;font-size:20px;line-height:20px;
+            							  background-color:lightgrey;padding:5px;">
+                <h2 style="margin:10px 0">Prototipado</h2>
+				<span>var Ship = function(){</span><br>
+				<span style="margin-left:20px">this.speed = 10;</span><br>
+				<span style="margin-left:20px">this.posX = 0;</span><br>
+				<span style="margin-left:20px">this.posY = 0;</span><br>
+				<span>}</span><br>
+				<span>Ship.prototype.moreSpeed = function(newSpeed){</span><br>
+				<span style="margin-left:20px">this.speed += newSpeed;</span><br>
+				<span>}</span><br>
+            </section>
+			<section style="clear:both;height:0"></section>
+			<section style="font-size:20px;line-height:20px;color:red;text-align:center">
+				<span>var a = new Ship;</span><br>
+				<span>console.log(a.speed);</span><br>
+				<span>a.moreSpeed(20);</span><br>
+				<span>console.log(a.speed);</span>
+			</section>
+        </section>
+
+        <section id="player2" class="step slide" data-x="10000" data-y="1600">
+            <h1>Player - Nuestro ejemplo</h1>
+            <iframe src="http://pastebin.com/embed_iframe.php?i=bwQrBNkW" style="border:none;width:100%;height:325px"></iframe>
+        </section>
+
+        <section id="player3" class="step slide" data-x="10000" data-y="2400">
+            <h1>Player - Sprites</h1>
+            <p>Aunque lo pongamos más adelante en Recursos, cabe mencionar una web desde la que podéis descargar
+            gran cantidad de sprites con los que crear cualquier juego que queráis: </p>
+            <a href="http://sdb.drshnaps.com" target="_blank" title="Sprite DB">Sprite Database</a>
+        </section>
+
+        <section id="shoots" class="step slide" data-x="10000" data-y="3200">
+            <h1>Disparos</h1>
+            <img src="img/shot.png" alt="shoots icon" style="position:absolute;left:300px;top:100px">
+            <img src="img/shot.png" alt="shoots icon" style="position:absolute;left:310px;top:110px">
+            <img src="img/shot.png" alt="shoots icon" style="position:absolute;left:320px;top:96px">
+            <img src="img/shot.png" alt="shoots icon" style="position:absolute;left:330px;top:115px">
+            <img src="img/shot.png" alt="shoots icon" style="position:absolute;left:340px;top:100px">
+            <img src="img/shot.png" alt="shoots icon" style="position:absolute;left:350px;top:108px">
+            <img src="img/shot.png" alt="shoots icon" style="position:absolute;left:360px;top:103px">
+            <img src="img/shot.png" alt="shoots icon" style="position:absolute;left:370px;top:92px">
+            <img src="img/shot.png" alt="shoots icon" style="position:absolute;left:380px;top:119px">
+            <img src="img/shot.png" alt="shoots icon" style="position:absolute;left:390px;top:90px">
+            <img src="img/shot.png" alt="shoots icon" style="position:absolute;left:400px;top:110px">
+            <img src="img/shot.png" alt="shoots icon" style="position:absolute;left:410px;top:103px">
+            <img src="img/shot.png" alt="shoots icon" style="position:absolute;left:420px;top:112px">
+            <img src="img/shot.png" alt="shoots icon" style="position:absolute;left:430px;top:98px">
+            <img src="img/shot.png" alt="shoots icon" style="position:absolute;left:440px;top:100px">
+            <img src="img/shot.png" alt="shoots icon" style="position:absolute;left:450px;top:105px">
+            <iframe src="http://pastebin.com/embed_iframe.php?i=6iCgswJ6" style="border:none;width:100%;height:370px"></iframe>
+        </section>
+
+        <section id="enemies" class="step slide" data-x="10000" data-y="4000">
+            <h1>Enemigos</h1>
+            <img src="img/invader.png" alt="invader icon" style="position:absolute;left:400px;top:50px">
+            <img src="img/invader.png" alt="invader icon" style="position:absolute;left:500px;top:50px">
+            <img src="img/invader.png" alt="invader icon" style="position:absolute;left:600px;top:50px">
+			<iframe src="http://pastebin.com/embed_iframe.php?i=qscj6Khk" style="border:none;width:100%;height:326px"></iframe>
+        </section>
+        
+        <!-- Colisiones -->
+        <section id="collisions" class="step slide" data-x="10000" data-y="4800" data-rotate="720">
+            <h1>Colisiones</h1>
+            <ul>
+                <li>Podemos complicarnos tanto como queramos</li>
+                <ul>
+                    <li>En nuestro caso, serán colisiones rectangulares</li>
+                </ul>
+                <li>Artículo más que recomendado:<br>
+                    <a href="http://www.wildbunny.co.uk/blog/2011/04/20/collision-detection-for-dummies/"
+                       target="_blank" title="Collision detection for dummies"
+                       style="margin-left:150px">Collision detection for dummies</a>
+                </li>
+            </ul>
+            <img src="img/collision.png" alt="collision" style="margin-left:270px">
+        </section>
+
+		<section id="collisions2" class="step slide" data-x="11000" data-y="4800" data-rotate="720">
+			<h1>Colisiones - Ejemplo</h1>
+			<iframe src="http://pastebin.com/embed_iframe.php?i=cArhd4M9" style="border:none;width:100%;height:240px"></iframe>
+		</section>
+
+        <!-- IA -->
+        <section id="IA" class="step slide" data-x="10000" data-y="5600">
+            <h1>IA</h1>
+            <img src="img/robot.png" alt="robot" style="position:absolute;top:50px;right:100px">
+            <p>Hasta el primer juego creado tuvo una IA.</p>
+						<p>Algo tan "simple" como un Pong, o <br>tan complejo como un Ajedrez.</p>
+						<ul>
+							<li>Fuerza bruta (damas, 3 en raya)</li>
+                                <ul>
+                                    <li><a href="http://es.wikipedia.org/wiki/Minimax" target="_blank" title="MINIMAX">MINIMAX</a></li>
+                                </ul>
+							<li>Sistema de veladuras (arcades, plataformas...)</li>
+							<li>Algoritmos genéticos (ajedrez, go)</li>
+						</ul>
+        </section>
+
+		<!-- Qué sería lo siguiente? -->
+		<section id="whatNext" class="step slide" data-x="11000" data-y="0">
+			<h1>¿Qué sería lo siguiente a hacer?</h1>
+			<ul>
+				<li>Contador de puntos</li>
+				<li>Pantalla de inicio (press start to play)</li>
+				<li>Que el enemigo se mueva</li>
+				<li>Que el enemigo dispare</li>
+				<li>Poner vidas a nuestra nave</li>
+				<li>Que haya varios enemigos</li>
+				<li><a href="#share">¡Compartirlo!</a></li>
+			</ul>
+		</section>
+
+		<!-- GitHub -->
+		<section id="share" class="step slide" data-x="11000" data-y="800">
+			<h1>¡Compártelo!</h1>
+			<p>Para que la charla sirva de algo, merece la pena que cada uno continúe a su manera con el juego.</p>
+			<p>He abierto un repositorio para que podáis compartir vuestros juegos: 
+                <a href="https://github.com/SeRGiNaToR/charla-juegos-en-js" target="_blank" title="Github repo">github.com/SeRGiNaToR/charla-juegos-en-js</a>.</p>
+			<p>Si lo preferís, mandadmelo por correo o twitter.</p>
+			<p>Después montaremos una web para mostrar los distintos juegos que hayamos hecho.</p>
+			<p>¡Y así vemos los resultados de la charla dentro de unos días!</p>
+		</section>
+				
+        <!-- RECURSOS VARIOS -->
+        <section id="resources" class="step slide" data-x="12000" data-y="0">
+			<h1>Recursos</h1>
+            <ul>
+                <li><a href="http://www.mangatutorials.com/forum/showthread.php?742-The-Ultimate-Indie-Game-Developer-Resource-List"
+                       title="megalista" target="_blank">Megalista de Recursos</a></li>
+                <li><a href="http://www.lostdecadegames.com/"
+                       title="lostdecadegames" target="_blank">Lostdecadegames, compañía de Silicon Valley</a></li>
+                <li><a href="http://www.def-logic.com/"
+                       title="Def-Logic" target="_blank">Def-Logic</a></li>
+                <li><a href="http://blog.nihilogic.dk/"
+					   title="Nihilogic" target="_blank">Nihilogic</a></li>
+                <li><a href="http://www.williammalone.com/articles/create-html5-canvas-javascript-game-character/1/"
+					   title="Create a Game Character with HTML5"
+					   target="_blank">Create a Game Character with HTML5</a></li>
+				<li><a href="http://sdb.drshnaps.com"
+					   title="Sprite Database" target="_blank">Sprite Database</a></li>
+            </ul>
+        </section>
+		
+        <!-- Y aquí el código final -->
+        <section id="final" class="step slide" data-x="13000" data-y="0">
+            <h1>Y para finalizar</h1>
+            <p>¡Esperamos que os haya gustado y servido!</p>
+            <iframe src="http://pastebin.com/embed_iframe.php?i=kfvmWDkC" style="border:none;width:100%;height:300px"></iframe>
+			<label style="font-size:30px;float:right;margin-top:15px">
+				<a href="res/navecitas.rar" title="Fuente e imágenes" target="_blank">Fuente e imágenes</a>
+			</label>
+        </section>
+		
+		<!-- Game -->
+		<section id="game" class="step" data-x="14000" data-y="0">
+			<iframe src="navecitas/index.html" frameborder="0" style="width:100%;height:660px"></iframe>
+		</section>
+
+        <!-- <section id="questions" class="step" data-x="7000" data-y="1000" data-rotate="1120" data-scale="7">
+            <label style="font-size: 200px;margin-left:-200px;font-weight:bold">¿Preguntas?</label>
+        </section> -->
+
+	</article>
+
+	<footer class="hint">
+	    <p>Utiliza la barra espaciadora o las flechas</p>
+	</footer>
+
+	<script>
+		if ("ontouchstart" in document.documentElement) { 
+		    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+		}
+	</script>
+
+	<script src="js/impress.js"></script>
+	<script>impress();</script>
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-30265898-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+</body>
+</html>
