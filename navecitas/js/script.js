@@ -66,8 +66,8 @@ var game = (function () {
     bgMain2.src = 'images/landscape.png';
     bgMain2.posX = 0;
 
-    player = new Player
-    enemy = new Enemy
+    player = new Player();
+    enemy = new Enemy();
 
     // Attach keyboard control
     addListener(document, 'keydown', keyDown);
@@ -89,7 +89,7 @@ var game = (function () {
     player.speed = 5;
 
     player.fire = function () {
-      if (nextShootTime < currentTime || currentTime == 0) {
+      if (nextShootTime < currentTime || currentTime === 0) {
         shot = new Shot(this, player.posX + 45, player.posY + 23, 5);
         shot.add();
         currentTime += shotDelay;
@@ -97,7 +97,7 @@ var game = (function () {
       } else {
         currentTime = new Date().getTime();
       }
-    }
+    };
     return player;
   }
 
@@ -111,10 +111,10 @@ var game = (function () {
     shot.time = new Date().getTime();
     shot.add = function () {
       shots.push(shot);
-    }
+    };
     shot.del = function (id) {
       arrayRemove(shots, id);
-    }
+    };
     return shot;
   }
 
@@ -128,7 +128,7 @@ var game = (function () {
       this.life = 5;
       this.posY = Math.floor(Math.random() * (canvas.height - this.height));
       this.posX = Math.floor(Math.random() * (canvas.width - this.width - player.width)) + player.width;
-    }
+    };
     return enemy;
   }
 
@@ -163,7 +163,7 @@ var game = (function () {
         settings.source[x].posX = settings.source[x].width - (canvas.width / 380) - 600;
       }
     }
-  }
+  };
 
   function playerAction() {
     if (keyPressed.up && player.posY > 5)
@@ -251,6 +251,6 @@ var game = (function () {
   // Public Methods
   return {
     init: init
-  }
+  };
 
 })();
